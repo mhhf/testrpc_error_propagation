@@ -126,3 +126,44 @@ contract('Test generic function call', function(accounts) {
   });
 });
 ```
+
+#### Execution log
+```
+Using environment test.
+Compiling contracts...
+
+
+  Contract: Test normal error propagation
+    ✓ should fail 1
+
+  Contract: Test generic error propagation
+    1) should fail 2
+    > No events were emitted
+
+  Contract: Test generic function call
+    ✓ test generic (70ms)
+
+
+  2 passing (719ms)
+  1 failing
+
+  1) Contract: Test generic error propagation should fail 2:
+     AssertionError: status should be false
+      at test.js:25:7
+      at tryCatcher (/usr/local/lib/node_modules/truffle/node_modules/ether-pudding/node_modules/bluebird/js/release/util.js:16:23)
+      at Promise._settlePromiseFromHandler (/usr/local/lib/node_modules/truffle/node_modules/ether-pudding/node_modules/bluebird/js/release/promise.js:502:31)
+      at Promise._settlePromise (/usr/local/lib/node_modules/truffle/node_modules/ether-pudding/node_modules/bluebird/js/release/promise.js:559:18)
+      at Promise._settlePromise0 (/usr/local/lib/node_modules/truffle/node_modules/ether-pudding/node_modules/bluebird/js/release/promise.js:604:10)
+      at Promise._settlePromises (/usr/local/lib/node_modules/truffle/node_modules/ether-pudding/node_modules/bluebird/js/release/promise.js:683:18)
+      at Async._drainQueue (/usr/local/lib/node_modules/truffle/node_modules/ether-pudding/node_modules/bluebird/js/release/async.js:138:16)
+      at Async._drainQueues (/usr/local/lib/node_modules/truffle/node_modules/ether-pudding/node_modules/bluebird/js/release/async.js:148:10)
+      at Immediate.Async.drainQueues [as _onImmediate] (/usr/local/lib/node_modules/truffle/node_modules/ether-pudding/node_modules/bluebird/js/release/async.js:17:14)
+      at Function.module.exports.loopWhile (/usr/local/lib/node_modules/truffle/node_modules/deasync/index.js:64:21)
+      at /usr/local/lib/node_modules/truffle/node_modules/deasync/index.js:36:18
+      at runTask (/usr/local/lib/node_modules/truffle/cli.js:46:12)
+      at Object.<anonymous> (/usr/local/lib/node_modules/truffle/cli.js:331:14)
+      at node.js:404:3
+
+
+
+```
